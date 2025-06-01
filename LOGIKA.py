@@ -100,5 +100,9 @@ def home():
 
 
 
+@app.route('/SEX', methods=['GET', 'POST'])
+def sex():
+    print(1)
+
 
 app.run(debug=False)
