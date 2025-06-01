@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Профиль</title>
+  <style>
+    #profile-box {
+      width: 300px;
+      height: 150px;
+      border: 5px solid yellow;
+      border-radius: 10px;
+      padding: 20px;
+      font-size: 20px;
+      font-family: Arial, sans-serif;
+      margin-bottom: 20px;
+      text-align: center;
+      cursor: default;
+    }
+    button {
+      margin: 5px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    form {
+      display: inline-block;
+      margin: 0 5px;
+    }
+  </style>
+</head>
+<body>
+
+<div id="profile-box">
+  Пользователь
+</div>
+
+<button onclick="changeBorderColor()">Поменять цвет рамки</button>
+
+<form action="/home" method="POST">
+  <button type="submit">На главную</button>
+</form>
+
+<form action="/logout" method="POST">
+  <button type="submit">Выйти</button>
+</form>
+
+<script>
+let current = 0;
+let colors = ['yellow', 'red', 'green', 'blue', 'purple'];
+let box = document.getElementById('profile-box');
+
+function changeBorderColor() {
+  current = current + 1;
+  if (current >= colors.length) {
+    current = 0;
+  }
+  box.style.borderColor = colors[current];
+}
+</script>
+
+</body>
+</html>
